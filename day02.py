@@ -1,20 +1,18 @@
-# SyntaxError: cannot assign to literal here. Maybe you meant '==' instead of '='?
+x = 2
+y = x + 5 # NameError: name 'x' is not defined
+print(y)
 
-# "univ" = "Inha University" # 실수, 문자, 정수 literal은 저장할 수 x, 값 그 자체
-# 99 = 71
+print(type(3.14))
+print(type(3.14) == float)
+print(isinstance(3.14, float))
+print(isinstance("inta", float))
+print(isinstance(55, float))
+
+artist = ['BTS', '뉴진스', '핑클', 'SES', 'HOT', '블랙핑크']
+groups = artist # 복제가 아니라 참조 개념!!!!!
+print(artist, groups)
+artist[2] = '세븐틴'
+print(artist, groups)
 
 
 
-# OK
-# case-sensitive
-abc = 7
-Abc  = 8
-ABC = 9
-print(abc, Abc, ABC)
-
-test9 = 88
-# 9test = 33
-_9test = 00
-print(test9, _9test)
-
-# False = 124 # reserved word
