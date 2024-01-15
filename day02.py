@@ -1,7 +1,25 @@
 # (100°F − 32) × 5/9 = 37.778°C
 # (0°C × 9/5) + 32 = 32°F
 
+# temp = [0]
+# temp = [] 라면 빈 리스트
+# if temp:
+#     print("원소 존재하는 리스트")
+# else:
+#     print("비어있는 리스트")
+
+
+
+sum = 1 + \
+    + 2 \
+    + 3
+print(sum)
+
+# sum = 1 + 2 + 3
+
+
 menu = input("1) Fahrenheit -> Celsius 2) Celsius -> Fahrenheit 3) Quit program : ")
+
 if menu == '1':
     fahrenheit = float(input('Input Fahrenheit : '))
     print(f'Fahrenheit : {fahrenheit}F, Celsius : {((fahrenheit - 32.0) * 5.0/9.0):.4f}C')
@@ -9,5 +27,9 @@ if menu == '1':
 elif menu == '2':
     celsius = float(input('Input Celsius : '))
     print(f'Celsius : {celsius}C, Fahrenheit : {((celsius * 9.0/5.0) + 32.0):.4f}F')
+
+else:
+    print('Terminate Program.')
+
 
 # 실수 타입으로 형변환! , 자릿수 같은 것은 검색!
