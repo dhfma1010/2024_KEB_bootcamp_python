@@ -1,21 +1,20 @@
-univ = "Inha university"
-print(univ)
+# SyntaxError: cannot assign to literal here. Maybe you meant '==' instead of '='?
 
-print(univ[5])
-# univ[5] = 'U' # immutable
-# print(univ)
-
-subjects = ['python', 'c++', 'linux', 'data structure', 'database']
-print(subjects)
-print(subjects[3])
-subjects[3] = 'data structure & algorithm'  # mutable
-print(subjects)
+# "univ" = "Inha University" # 실수, 문자, 정수 literal은 저장할 수 x, 값 그 자체
+# 99 = 71
 
 
-# print(0.1)
-# print(1e-1)
-# print(0.01)
-# print(1e-2)
-# print(314.22)
-# print(0.31422e3)
 
+# OK
+# case-sensitive
+abc = 7
+Abc  = 8
+ABC = 9
+print(abc, Abc, ABC)
+
+test9 = 88
+# 9test = 33
+_9test = 00
+print(test9, _9test)
+
+# False = 124 # reserved word
