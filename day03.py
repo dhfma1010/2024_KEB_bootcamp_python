@@ -1,18 +1,30 @@
-# Assignment (loop)
+university = "Inha\nUniversity!"
+# university = r"Inha\nUniversity" # raw string
+
+# slicing
+# print(university[:4])
+# print(university[:-11]) # reverse
+# print(len(university))   # len 문자열 길이
+# print(university[0:len(university)])
+# print(university[0:16])
+# print(university[:16])
+# print(university[::2])
 
 
-while True:
 
-    menu = input("1) Fahrenheit -> Celsius 2) Celsius -> Fahrenheit 3) Quit program : ")
 
-    if menu == '1':
-        fahrenheit = float(input('Input Fahrenheit : '))
-        print(f'Fahrenheit : {fahrenheit}F, Celsius : {((fahrenheit - 32.0) * 5.0/9.0):.4f}C')
+nuber1 = input("First number :")
+nuber2 = input("Second number :")
+print(nuber1 + nuber2) # concatenation
+print(nuber1 * 3) # duplication
+# print(nuber1 + 3) # TypeError: can only concatenate str (not "int") to str
 
-    elif menu == '2':
-        celsius = float(input('Input Celsius : '))
-        print(f'Celsius : {celsius}C, Fahrenheit : {((celsius * 9.0/5.0) + 32.0):.4f}F')
 
-    elif menu == '3':
-        print('Terminate Program.')
-        break
+name = 'aabbccdd'
+name.replace('cc','ee')
+print(name)
+
+course = "2024 KEB bootcamp"
+print(course)
+list_course = course.split()
+print(list_course)
