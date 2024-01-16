@@ -1,8 +1,8 @@
-# 6-2
-guess_me = 7
-number = 1
+# 6-3
 
-while True:
+guess_me = 5
+
+for number in range(10):
     if guess_me > number:
         print("too low")
     elif guess_me == number:
@@ -10,4 +10,5 @@ while True:
     elif guess_me < number:
         print("oops")
         break
-    number += 1
+
+## number 0부터 시작해도 되나??
