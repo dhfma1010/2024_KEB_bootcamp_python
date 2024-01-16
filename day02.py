@@ -1,4 +1,3 @@
-
 menu = input("1) Fahrenheit -> Celsius 2) Celsius -> Fahrenheit 3) Quit program : ")
 
 while menu != 3:
@@ -16,3 +15,4 @@ while menu != 3:
     else:
         print('Terminate Program.')
         break
+
