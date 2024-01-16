@@ -1,8 +1,13 @@
-#1
+# 6-2
+guess_me = 7
+number = 1
 
-print(list(range(3,-1,-1)))
-
-list = [3,2,1,0]
-for i in list:
-    print(i)
-
+while True:
+    if guess_me > number:
+        print("too low")
+    elif guess_me == number:
+        print("found it!")
+    elif guess_me < number:
+        print("oops")
+        break
+    number += 1
