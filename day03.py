@@ -1,7 +1,22 @@
-# 제너레이트 개념!!
-print(range(3,9))  # range(3,9) 제너레이트 숫자 발생 시키고 지워버림(기억x)
-print(list(range(3,9))) # list에 담김
-print(tuple(range(3,9)))
+# prime number  # 두 수 사이의 소수 출력
+
+numbers = input("Input first second number : ").split()
+n1 = int(numbers[0])
+n2 = int(numbers[1])
+
+for number in range(n1, n2+1):
+    is_prime = True
+
+    if number < 2:
+        pass # 자리 차지하는데 그냥 지나감
+    else:
+        for i in range(2, number):
+            if number % i == 0:
+                is_prime = False # remove +
+                break  # break 없으면 계속 돌아감
+        if is_prime: print(number, end=' ')
+
+
 
 
 
