@@ -1,20 +1,8 @@
-# prime number
-number = int(input("Input number : "))
-is_prime = True # int -> bool
+# 제너레이트 개념!!
+print(range(3,9))  # range(3,9) 제너레이트 숫자 발생 시키고 지워버림(기억x)
+print(list(range(3,9))) # list에 담김
+print(tuple(range(3,9)))
 
-if number < 2:
-    print(f'{number} is NOT prime number!')
-else:
-    for i in range(2, number):
-        if number % i == 0:
-            is_prime = False
-            break
-
-    # if cnt ==0:
-    if is_prime: # remove ==
-        print(f'{number} is prime number')
-    else:
-        print(f'{number} is NOT prime number!')
 
 
 
