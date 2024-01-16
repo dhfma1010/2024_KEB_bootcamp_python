@@ -1,18 +1,22 @@
-univ = "inha"
+# prime number
+number = int(input("Input number : "))
+is_prime = True # int -> bool
 
-i = 0 # 초기값 오류 문제 , 초기값 조정하면 특정 구간 뽑을 수 있음
-while i < len(univ):
-    print(univ[i], end=' ')
-    i = i + 1  # 연산 오류 문제
+if number < 2:
+    print(f'{number} is NOT prime number!')
+else:
+    for i in range(2, number):
+        if number % i == 0:
+            is_prime = False
+            break
 
-print()
+    # if cnt ==0:
+    if is_prime: # remove ==
+        print(f'{number} is prime number')
+    else:
+        print(f'{number} is NOT prime number!')
 
-for letter in univ:  # 오류 적음 , 특정 구간 뽑으려 하면 안됨
-    print(letter, end=' ')
 
-print()
 
-# for k in range(0, len(univ), 1):  # 시작, 끝값, 증감 입력 오류 문제
-# for k in range(0, len(univ)):
-for k in range(len(univ)):
-    print(univ[k], end=' ')
+
+
