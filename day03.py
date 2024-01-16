@@ -1,41 +1,26 @@
-university = "Inha\nUniversity!"
-# university = r"Inha\nUniversity" # raw string
 
-# slicing
-# print(university[:4])
-# print(university[:-11]) # reverse
-# print(len(university))   # len 문자열 길이
-# print(university[0:len(university)])
-# print(university[0:16])
-# print(university[:16])
-# print(university[::2])
+course = "* KEB 2024#! KEB !bootcamp KEB...*!#"
+print(course.find('KEB'))  # 앞에서 부터 찾기
+print(course.rfind('KEB'))   # 뒤에서 부터 찾기
+print(course.index('KEB'))  # find랑 같은 기능
+print(course.rindex('KEB'))  # find랑 같은 기능
+print(course.find('Inha'))  # -1  --> if문 사용해서 해결
+print(course.index('Inha')) # ValueError: substring not found
 
 
+print(course)
+course = course.replace('KEB','Inha',2)
+print(course)
+
+print(course.strip())
+print(course.strip("!#.*"))  # 연속적인 것,맨 앞쪽 지워짐, 중간중간 안지워짐
 
 
-nuber1 = input("First number :")
-nuber2 = input("Second number :")
-print(nuber1 + nuber2) # concatenation
-print(nuber1 * 3) # duplication
-# print(nuber1 + 3) # TypeError: can only concatenate str (not "int") to str
 
 
-name = 'aabbccdd'
-name.replace('cc','ee')
-print(name)
-
-# course = "2024 KEB bootcamp"
 # print(course)
-# # list_course = course.split()
-# list_course = course.split('B')
-# print(list_course)
+# print(course.replace('KEB','Inha'))
+# print(course)
+# course = course.replace('KEB','Inha')
+# print(course) # 재할당 됨
 
-
-numbers = input("FirstNumber SecondNumber : ").split()
-# print(numbers[0] + numbers[1])   # concatenation
-print(int(numbers[0]) + int(numbers[1]))   # arithmetic operation
-
-
-subjects = ["python", "c++", "database"]
-subjects_string = " / ".join(subjects)
-print(subjects_string)
