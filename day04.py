@@ -1,29 +1,12 @@
-# 튜플
-
-t9 = 1,2,3
-t10 = 3, 2
-
-print(t9 < t10) # 개수 비교가 아니라 원소 비교!!
-
-# 리스트
-
-subjects = ["C++", "Java", "Python", "Java"]
-print(subjects[::-1])
-subjects[::-1]
-print(id(subjects))
-print(subjects)
-subjects.reverse()  # 원본 바뀜!!!!!
-print(subjects)
-print(id(subjects))
-
+subjects = ["데이터베이스","C++", '5', "Java", "Python", "Java", '9', "리눅스"]
 
 print(subjects)
-# #subjects.remove('Java')
-# print(subjects)
-# del subjects[-2]
-# del subjects[1]
-# print(subjects)
-
-subjects.pop(0)
+subjects.sort()  # 문자와 정수 타입 비교 불가  --> 방법 int를 str로 바꿔줌 # 우선순위 : 숫자문자열, 알파벳, 한글
+print(subjects)
+subjects.sort(reverse=True) # desc
 print(subjects)
 
+print()
+copy_subjects = sorted(subjects)
+print(subjects)
+print(copy_subjects)
