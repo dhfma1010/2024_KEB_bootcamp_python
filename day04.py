@@ -1,12 +1,13 @@
-subjects = ["데이터베이스","C++", '5', "Java", "Python", "Java", '9', "리눅스"]
+# subjects = ["a", "b", "c"] # b,c,d 값 바뀌지 x(immutable한 값 )
+import copy
 
-print(subjects)
-subjects.sort()  # 문자와 정수 타입 비교 불가  --> 방법 int를 str로 바꿔줌 # 우선순위 : 숫자문자열, 알파벳, 한글
-print(subjects)
-subjects.sort(reverse=True) # desc
-print(subjects)
+subjects = ["a",["b","c"], "d"] #  vs list (mutable한 값이라 복제한 것도 다 변화)
+a = subjects
+b = subjects.copy()
+c = list(subjects)
+d = subjects[:]
+e = copy.deepcopy(a)
+print(subjects, a, b, c, d, e)
+subjects[1][1]= "x"
+print(subjects, a, b, c, d, e)
 
-print()
-copy_subjects = sorted(subjects)
-print(subjects)
-print(copy_subjects)
