@@ -13,7 +13,7 @@ for number in range(n1, n2 + 1):
         pass
     else: # 소수일 때 for문 너무 많이 돌아감
         i = 2
-        while i*i < number: # 반복횟수 감소 ################# 성능 개선 코드 , performance issue
+        while i*i <= number: # 반복횟수 감소 ################# 성능 개선 코드 , performance issue
             if number % i == 0:
                 is_prime = False  # remove +
                 break  # break 없으면 계속 돌아감
