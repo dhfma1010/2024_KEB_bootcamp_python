@@ -1,26 +1,28 @@
-# dictionary
+# dictionary 안주 추천 프로그램
 
-sugang = dict(python = "kim", db = "kang", cpp = "sung")
-# print(sugang)
-# sugang['datastructure'] = 'kim' # add
-# print(sugang)
-# sugang['datastructure'] = 'park' # update
-# print(sugang)
-# print(sugang['db'])
-# print(sugang.get('db'))
-# print(sugang.get('opensource') # 없는 값 인수1개일때 -> None 리턴
-# print(sugang.get('opensource','not exist'))
+drinks_foods = {"위스키": "초콜릿", "와인":"치즈", "소주":"삼겹살", "고량주":"양꼬치"}
 
-for subject, professor in sugang.items():
-    print(f'{subject} 과목 담당교수는 {professor}입니다.')
+# drink = input(drinks_foods.keys())
+drinks_foods_keys = list(drinks_foods) # dic을 list로 감싸면 key만 저장됨.
+print(drinks_foods_keys)
 
+while True:
+    menu = input(f'다음 술 중에 고르세요.\n1) {drinks_foods_keys[0]}, 2) {drinks_foods_keys[1]}, 3) {drinks_foods_keys[2]}, 4) {drinks_foods_keys[3]} 5) 종료: ')
+    if menu == '1':
+        print(f'{drinks_foods_keys[0]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[0]]} 입니다.')
 
-#for k in sugang.keys():
-for k in sugang:
-    print(k)
+    elif menu == '2':
+        print(f'{drinks_foods_keys[1]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[1]]} 입니다.')
 
-for v in sugang.values():
-    print(v)
+    elif menu == '3':
+        print(f'{drinks_foods_keys[2]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[2]]} 입니다.')
 
-for s in sugang.items():
-    print(s) # 하나로 받게 되면 tuple형태로 받게됨 packing돼서!!
+    elif menu == '4':
+        print(f'{drinks_foods_keys[3]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[3]]} 입니다.')
+
+    elif menu == '5':
+        print(f'다음에 또 오세요.')
+        break
+
+    print()
+
