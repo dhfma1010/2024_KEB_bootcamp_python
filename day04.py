@@ -1,23 +1,26 @@
-# list 컴프리헨션
+# dictionary
 
-# 1)
-# squares = list()
-# squares.append(1*1)
-# squares.append(2*2)
-# squares.append(3*3)
-# squares.append(4*4)
-# squares.append(5*5)
-# print(squares)
+sugang = dict(python = "kim", db = "kang", cpp = "sung")
+# print(sugang)
+# sugang['datastructure'] = 'kim' # add
+# print(sugang)
+# sugang['datastructure'] = 'park' # update
+# print(sugang)
+# print(sugang['db'])
+# print(sugang.get('db'))
+# print(sugang.get('opensource') # 없는 값 인수1개일때 -> None 리턴
+# print(sugang.get('opensource','not exist'))
 
-# 2)
-# squares = list()
-# for i in range(1,6):
-#     squares.append(i*i)
-# print(squares)
+for subject, professor in sugang.items():
+    print(f'{subject} 과목 담당교수는 {professor}입니다.')
 
-# 3) list comprehension 축약표현  -------- for문 여러개 일때는 가독성 문제로 잘 안씀
-# squares = [i*i for i in range(1,6,1)]
-# print(squares)
 
-even_squares = [i*i for i in range(1, 6, 1) if i % 2 == 0]
-print(even_squares)  # 리스트 초기화 할 때 유용
+#for k in sugang.keys():
+for k in sugang:
+    print(k)
+
+for v in sugang.values():
+    print(v)
+
+for s in sugang.items():
+    print(s) # 하나로 받게 되면 tuple형태로 받게됨 packing돼서!!
