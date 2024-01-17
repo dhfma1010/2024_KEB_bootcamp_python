@@ -1,38 +1,61 @@
-t1 = (5)
-t2 = 5,
-t3 = (5,)
-t4 = (5, 7)
-t5 = 5, 7
+# Assignment 답안!!  (add prime series program)
 
-print(type(t1),type(t2),type(t3),type(t4),type(t5))
+while True:
 
-t6 = "python", "kim" # packing
+    menu = input("1) Fahrenheit -> Celsius 2) Celsius -> Fahrenheit 3) prime number or not 4) n1~n2 prime numbers 5) Quit program : ")
 
-print(type(t6), t6[1])
-subject, prof = t6 # unpacking 개수 맞아야
-# a, b, c = t6   # ValueError: not enough values to unpack
-print(prof)
-print(subject)
+    if menu == '1':
+        fahrenheit = float(input('Input Fahrenheit : '))
+        print(f'Fahrenheit : {fahrenheit}F, Celsius : {((fahrenheit - 32.0) * 5.0/9.0):.4f}C')
 
-t7 = () # 빈 튜플
-t8 = tuple()   # 자료구조 튜플로 형 변환
-print(type(t7), type(t8), type(9,), type((9,)))  # 3번째것은 쉼표 구분기호 -int/ 4번째 것은 괄호때문에 튜플로
+    elif menu == '2':
+        celsius = float(input('Input Celsius : '))
+        print(f'Celsius : {celsius}C, Fahrenheit : {((celsius * 9.0/5.0) + 32.0):.4f}F')
 
-print(type('Groucho',))  # 문자열로
+    elif menu == '3':
+        number = int(input("Input number : "))
+        is_prime = True  # int -> bool
+
+        if number < 2:
+            print(f'{number} is NOT prime number!')
+        else:
+            for i in range(2, number):
+                if number % i == 0:
+                    is_prime = False  # remove +
+                    break  # break 없으면 계속 돌아감
+
+            # if cnt ==0:
+            if is_prime:  # remove ==
+                print(f'{number} is prime number')
+            else:
+                print(f'{number} is NOT prime number!')
+
+    elif menu == '4':
+        numbers = input("Input first second number : ").split()
+        n1 = int(numbers[0])
+        n2 = int(numbers[1])
+
+        if n1 > n2:
+            n1, n2 = n2, n1
+
+        for number in range(n1, n2 + 1):
+            is_prime = True
+
+            if number < 2:
+                pass
+            else:
+                for i in range(2, number):
+                    if number % i == 0:
+                        is_prime = False  # remove +
+                        break  # break 없으면 계속 돌아감
+                if is_prime: print(number, end=' ')
+        print()
 
 
-# 튜플간 비교연산 가능
-t9 = 1, 2, 3
-t10 = 1, 2
-print(t9 == t10)
-print(t9 <= t10)
-print(t9 > t10)
+    elif menu == '5':
+        print('Terminate Program.')
+        break
 
-t11 = 4.43,
-t12 = 3.88, 4.1, 3.26
+    else:
 
-# print(t11 + t12)
-print(id(t11))
-t11 = t11 + t12 # t11 += t12
-print(id(t11))
-print(t11)
+        print("Invalid Menu")
