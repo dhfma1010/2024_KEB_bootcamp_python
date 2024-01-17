@@ -1,16 +1,22 @@
-# Assignment 1 create dict
+# Assignment 8.6~8.9
 
-# 8.1
-e2f = dict(dog='chien', cat='chat', walrus='morse')
-print(e2f)
+life = dict(animals=dict(cats="Henri", octopi="Grumpy", emus="Lucy"),
+            plants=dict(),
+            other=dict())
+life2 = {'animals':{'cats':'Henri','octopi':'Grumpy','emus':'Lucy'},
+         'plants':{},
+         'other':{}}
+print(life2)
+print(life)
 
-# 8.5
+# 8.7
 
-e2f_keys_tuple = tuple(e2f.keys())
-e2f_keys_list = list(e2f.keys())
-print(f'English words : {e2f_keys_tuple}')
-print(f'English words : {e2f_keys_list}')
+print(list(life.keys()))
 
-print('English words :', end=' ')
-for eng_word in e2f_keys_tuple:
-    print(eng_word, end=' ')
+# 8.8
+
+print(list(life['animals'].keys()))
+
+# 8.9
+
+print(life['animals']['cats'])
