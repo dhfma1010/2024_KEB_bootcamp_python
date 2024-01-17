@@ -18,7 +18,7 @@ while True:
 
         if number < 2:
             print(f'{number} is NOT prime number!')
-        else:
+        else: # 중복코드 -> 함수로 만들어서 호출
             for i in range(2, number):
                 if number % i == 0:
                     is_prime = False  # remove +
@@ -30,9 +30,9 @@ while True:
             else:
                 print(f'{number} is NOT prime number!')
 
-    elif menu == '4':
-        numbers = input("Input first second number : ").split()
-        n1 = int(numbers[0])
+    elif menu == '4': # 엄청 큰 소수 입력했을 때 반복문 계속 돌아가는 문제
+        numbers = input("Input first second number : ").split()  # 숫자 입력하는 방식 설명해주는 것 개선! n1(space)n2 )    # 가독성 있게 코드 개선 5줄 -> 2줄?
+        n1 = int(numbers[0]
         n2 = int(numbers[1])
 
         if n1 > n2:
