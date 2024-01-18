@@ -1,11 +1,23 @@
-# assignment 9.2 generator
+# assignment 9.3 decorator
 
-def get_odds():
-    n = [i for i in range(10) if i % 2 == 1]
-    yield n
+def test(func):
+    def f2(*args, **kwargs):
+        print('end')
+        return f1
+            def f1(*args, **kwargs):
+                print('start')
+                result = func(*args, **kwargs)
+                return result
+    return f2
+def subtract_ints(a,b):
+    return a-b
+print(subtract_ints(3,4))
+
+@test
+def subtract_ints(a,b):
+    return a-b
+
+print(subtract_ints(4,3))
 
 
-print(get_odds(), type(get_odds()))
 
-for number in get_odds():
-    print(number[2])
