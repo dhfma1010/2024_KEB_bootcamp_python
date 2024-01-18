@@ -1,8 +1,10 @@
-def a(n1,n2):
-    print(n1,n2)
+# 매개변수로 함수 들어갈 수 있음
 
-def a(n):
-    print(n)
+def squares(n):
+    return n * n
 
-a(8)
-# a(7,8) ## 파이썬 오버로딩 개념 없음!!  오류
+def run_function(f, number):
+    return f(number)
+
+print(squares(7))
+print(run_function(squares,9))
