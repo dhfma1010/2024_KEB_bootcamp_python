@@ -1,20 +1,18 @@
-# 매개변수로 함수 들어갈 수 있음
+# inner function
+# def out_func(nout):
+#     def inner_func(nin):
+#         return nin * nin
+#     return inner_func(nout)
+#
+# print(out_func(5))
 
-def squares(*n) -> list:
-    """
-    넘겨 받은 수치 데이터들의 거듭제곱 값을 리스트에 담아서 리턴
-    :param n: tuple
-    :return: list
-    """
-    return [i*i for i in n] # 튜플로 리턴하려며??
+# closure function   # 다른 언어에서 보기 힘듦
+def out_func(nout):
+    def inner_func():
+        return nout * nout
+    return inner_func
 
-    # return n * n
-
-def run_function(f, *number) -> list:
-     return f(*number)
-
-print(squares(7,5,2))
-
-print(run_function(squares,9,10))
-
-
+x = out_func(9)
+print(type(x))
+print(x) # 함수 메모리 주소
+print(x()) # 함수 실행
