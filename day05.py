@@ -1,12 +1,16 @@
-# def squares(n):
-#    return n * n
+def my_range(first=0, last=5, step=1):
+    number = first
+    while number < last:
+        yield number  # generate return 대신 yield
+        number += step
 
-even_numbers = [i for i in range(51) if i % 2 == 0]
-print(even_numbers)
+r = my_range()
+print(r, type(r))
 
-# print(tuple(map(squares, even_numbers)))
+for x in r:
+    print(x)
 
-print(tuple(map(lambda x: x**2, even_numbers))) # squares 함수 없어도 됨/ 대신 익명함수
-# 아래도 같은 결과
-# z = lambda x: pow(x,2)
-# print(tuple(map(z,even_numbers)))
+for x in r:
+    print(x)  # 한번 쓰면 쓰고 사라짐. 기억할 공간x , 반복문 반응x
+
+
