@@ -1,12 +1,5 @@
-# # dictionary comprehension
-#
-# univ = 'inha university'
-# counts_alphabet = {letter: univ.count(letter) for letter in univ}
-# print(counts_alphabet)
+# Assignment
 
 
-univ = 'inha university'
-counts_alphabet = dict()
-for letter in univ:
-    counts_alphabet[letter] = univ.count(letter)
-print(counts_alphabet)
+squares = {i: i*i for i in range(10)} # squares = {i: pow(i,2) for i in range(10)} # pow(i,2) = i**2
+print(squares)
