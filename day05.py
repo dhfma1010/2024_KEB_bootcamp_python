@@ -1,23 +1,22 @@
-# assignment 9.3 decorator
+# assignment 예외정의
 
-def test(func):
-    def f2(*args, **kwargs):
-        print('end')
-        return f1
-            def f1(*args, **kwargs):
-                print('start')
-                result = func(*args, **kwargs)
-                return result
-    return f2
-def subtract_ints(a,b):
-    return a-b
-print(subtract_ints(3,4))
+class OopsException(Exception):
+    pass
 
-@test
-def subtract_ints(a,b):
-    return a-b
+words = []
+while True:
+    word = input("Input word: ")
+    words.append(word)
 
-print(subtract_ints(4,3))
+    if 'oops' in words:
+        raise OopsException(word)
+
+    print(words)
+
+try:
+    raise OopsException('Caught an oops')
+except OopsException as exc:
+    print(exc)
 
 
 
