@@ -11,6 +11,15 @@ class Pokemon:
     def attack(self):
         print("공격")
 
+    def get_name(self):
+        print("inside getter")
+        return self.name
+
+    def set_name(self, new_name):
+        print("inside setter")
+        self.name = new_name
+
+
 class Charizard(Pokemon, FlyingMixin):
     pass
 
@@ -20,10 +29,16 @@ class Gyarados(Pokemon, SwimmingMixin):
 g1 = Gyarados("갸라도스")
 c1 = Charizard("리자몽")
 
+# direct로 변경
 print(g1.name)
-g1.name = "잉어킹" # direct로 변경
+g1.name = "잉어킹"
 print(g1.name)
 
+
+# get, set 사용
+print(g1.get_name())
+g1.set_name("잉어")
+print(g1.get_name())
 
 # print(c1.fly())
 # print(g1.swim())
