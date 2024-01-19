@@ -1,36 +1,39 @@
-# # class Pokemon():
-#
-# # 객체에 속성 할당
-#
-# class Pokemon:
-#     pass
-#
-# pikachu = Pokemon()
-# squirtle = Pokemon()
-# pikachu.name = "피카츄"
-# pikachu.nemesis = squirtle
-# print(pikachu.name)
-# # print(pikachu.nemesis.name) # 오류!
-#
-# # squirtle.name = "꼬부기"
-# pikachu.nemesis.name = "꼬부기"
-# print(pikachu.nemesis.name)  # 할당 후 오류 안남!
-# print(squirtle.name)
-
-
-
-
 class Pokemon:
-    def __init__(self, name):  # 여기 name은 클래스의 속성 아님! 그냥 단순 출력
-        self.name = name # 이 코드가 클래스 속성 넣는 것
-        print(f"{name} 포켓몬스터 생성")
+    def __init__(self, name):
+        self.name = name
 
     def attack(self, target):
         print(f"{self.name}이(가) {target.name}을(를) 공격!")
 
-charizard = Pokemon("리자몽")
-pikachu = Pokemon("피카츄")
-squirtle = Pokemon("꼬부기")
-charizard.attack(squirtle)
-print(pikachu.name)
-print(squirtle.name)
+class Pikachu(Pokemon):  # 상속하는 법 is-a 관계
+# class Pikachu: # 에러
+    def __init__(self, name, type):
+        super().__init__(name)  # 부모 메소드 호출
+        self.type = type
+
+    def attack(self, target):
+        print(f"{self.name}이(가) {target.name}을(를) {self.type} 공격!")
+
+    def electric_info(self):
+        print("전기 계열 공격")
+
+class Squirtle(Pokemon):
+    pass
+
+class Agumon:
+    pass
+
+p1 = Pikachu("피카츄","불꽃")  # 부모의 name 사용
+p2 = Squirtle("꼬부기")
+p3 = Pokemon("아무")
+print(p1.name)
+
+print(issubclass(Pikachu, Pokemon))
+print(issubclass(Agumon, Pokemon))
+
+p1.attack(p2)
+p2.attack(p1)
+p1.electric_info()
+# p3.electric_info() # 에러/ 자식 전용 메소드
+
+print(p1.name, p1.type)
