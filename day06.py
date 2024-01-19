@@ -7,3 +7,7 @@ class Pokemon:
 pikachu = Pokemon("피카츄")
 squirtle = Pokemon("꼬부기")
 
+print(pikachu)  # <__main__.Pokemon object at 0x000002222DBFD340> main안에 Pokemon 객체
+                ## -> 원하는 방식으로 출력되게 가능
+print(squirtle)
+
