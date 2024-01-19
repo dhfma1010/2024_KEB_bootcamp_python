@@ -24,3 +24,5 @@ number = int(input("number : "))
 print(factorial_recursion(number))
 
 print(factorial_repetition(number))
+
+print(globals())
