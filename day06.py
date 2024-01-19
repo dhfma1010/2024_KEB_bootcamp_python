@@ -1,4 +1,5 @@
 # assignment
+# Open Closed Principle
 
 def test(f):
     """
@@ -7,7 +8,7 @@ def test(f):
     :return: closure function
     """
     # def test_in(*args, **kwargs):  #매개변수 지워도 되고 작성해도 됨
-    def test_in()
+    def test_in():
         print('start')
         # result = f(*args, **kwargs)
         f()  # 호출만 해도 됨
@@ -17,9 +18,8 @@ def test(f):
 
 
 
-# 수동
+@test
 def greeting():  # 기존함수 수정 안함! 닫혀있음
     print("안녕하세요")
 
-t = test(greeting)
-t()
+greeting()
