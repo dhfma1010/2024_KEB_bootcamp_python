@@ -8,20 +8,20 @@ class SwimmingMixin:
 
 class Pokemon:
     def __init__(self, name):
-        self.hidden_name = name
+        self.__name = name
 
     def attack(self):
         print("공격~")
 
     @property
     def name(self):
-        return self.hidden_name
+        return self.__name
 
     @name.setter
     def name(self, new_name):
-        self.hidden_name = new_name
+        self.__name = new_name
 
-    # name = property(get_name, set_name)
+    #name = property(get_name, set_name)
 
 
 class Charizard(Pokemon, FlyingMixin):
@@ -39,6 +39,8 @@ c1 = Charizard("리자몽")
 
 # property 3rd
 print(g1.name)
-# print(g1.__name) # direct accessX
-g1._Pok_name = "잉어"
-print(g1._Pokenomn__name) # 직접 접근 막음   # 사실상 private 개념은 없음.
+#print(g1.__name)  # direct access X
+#g1._Pokemon__name = "잉어킹"
+g1.name = "잉어킹"
+#g1.__name = "잉어킹"
+print(g1._Pokemon__name)  # 사실 상 private 개념은 없는 걸로
