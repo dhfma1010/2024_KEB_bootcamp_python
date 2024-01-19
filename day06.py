@@ -1,27 +1,25 @@
 # assignment
 
-def get_odds(n) -> int:
+def test(f):
     """
-    1부터 n까지 홀수를 발생시키는 제너레이터
-    :param n: int
-    :return: int
+    데코레이터 함수, 함수 시작 start 출력, 끝나면 end 출력
+    :param f: function
+    :return: closure function
     """
-    for i in range(1,n+1,2):
-        yield i # i값 계속 보내줌 , 이전 상태 사라짐
-
-cnt = 0
-odds = get_odds(9)
-
-for odd in odds:
-    cnt = cnt + 1
-    if cnt == 3:
-        print(f'Third number is {odd}')
-        break
+    # def test_in(*args, **kwargs):  #매개변수 지워도 되고 작성해도 됨
+    def test_in()
+        print('start')
+        # result = f(*args, **kwargs)
+        f()  # 호출만 해도 됨
+        print('end')
+        # return result
+    return test_in # closure 리턴해야함!!
 
 
-# 제너레이트 이므로 또 반복 안되고 사라짐
-for odd in odds:
-    cnt = cnt + 1
-    if cnt == 3:
-        print(f'Third number is {odd}')
-        break
+
+# 수동
+def greeting():  # 기존함수 수정 안함! 닫혀있음
+    print("안녕하세요")
+
+t = test(greeting)
+t()
