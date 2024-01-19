@@ -1,25 +1,26 @@
-# assignment
-# Open Closed Principle
-
-def test(f):
+def factorial_repetition(n)-> int: # 장점 : 속도 빠름
     """
-    데코레이터 함수, 함수 시작 start 출력, 끝나면 end 출력
-    :param f: function
-    :return: closure function
+    반복문을 이용한 팩토리얼 함수
+    :param n: 정수, int
+    :return: 팩토리얼 값, int
     """
-    # def test_in(*args, **kwargs):  #매개변수 지워도 되고 작성해도 됨
-    def test_in():
-        print('start')
-        # result = f(*args, **kwargs)
-        f()  # 호출만 해도 됨
-        print('end')
-        # return result
-    return test_in # closure 리턴해야함!!
+    result = 1  # 값 바뀔 문제
+    for i in range(2, n+1): # 값 바뀔 문제
+        result = result * i
+    return result
 
+def factorial_recursion(n): # 실수할 여지 적음. 메모리 많이 사용. (스택)
+    """
+    재귀함수를 사용한 팩토리얼 함수
+    :param n: 정수, int
+    :return: function
+    """
+    if n == 1:
+        return n
+    else:
+        return n * factorial_recursion(n-1)
 
+number = int(input("number : "))
+print(factorial_recursion(number))
 
-@test
-def greeting():  # 기존함수 수정 안함! 닫혀있음
-    print("안녕하세요")
-
-greeting()
+print(factorial_repetition(number))
