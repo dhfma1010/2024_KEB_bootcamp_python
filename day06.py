@@ -1,13 +1,18 @@
 # class Pokemon():
+
+# 객체에 속성 할당
+
 class Pokemon:
-    def __init__(self, name): # 생성자, 각 개체마다 딱 1번 돌아가는 코드
-        print(f"{name} 포켓몬스터 생성")
+    pass
 
+pikachu = Pokemon()
+squirtle = Pokemon()
+pikachu.name = "피카츄"
+pikachu.nemesis = squirtle
+print(pikachu.name)
+# print(pikachu.nemesis.name) # 오류!
 
-pikachu = Pokemon("피카츄")
-squirtle = Pokemon("꼬부기")
-
-print(pikachu)  # <__main__.Pokemon object at 0x000002222DBFD340> main안에 Pokemon 객체
-                ## -> 원하는 방식으로 출력되게 가능
-print(squirtle)
-
+# squirtle.name = "꼬부기"
+pikachu.nemesis.name = "꼬부기"
+print(pikachu.nemesis.name)  # 할당 후 오류 안남!
+print(squirtle.name)
