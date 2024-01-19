@@ -1,10 +1,10 @@
 class FlyingMixin:
     def fly(self):
-        return f"{self.hidden_name}이(가) 하늘을 훨훨 날아갑니다~"
+        return f"{self.__name}이(가) 하늘을 훨훨 날아갑니다~"
 
 class SwimmingMixin:
     def swim(self):
-        return f"{self.hidden_name}이(가) 수영을 합니다."
+        return f"{self.__name}이(가) 수영을 합니다."
 
 class Pokemon:
     def __init__(self, name):
@@ -37,8 +37,8 @@ c1 = Charizard("리자몽")
 # g1.set_name("잉어킹")
 # print(g1.get_name())
 
-# property 2nd
+# property 3rd
 print(g1.name)
-g1.name = "잉어킹"
-print(g1.name)
-
+# print(g1.__name) # direct accessX
+g1._Pok_name = "잉어"
+print(g1._Pokenomn__name) # 직접 접근 막음   # 사실상 private 개념은 없음.
