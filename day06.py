@@ -1,28 +1,29 @@
-def factorial_repetition(n)-> int: # 장점 : 속도 빠름
-    """
-    반복문을 이용한 팩토리얼 함수
-    :param n: 정수, int
-    :return: 팩토리얼 값, int
-    """
-    result = 1  # 값 바뀔 문제
-    for i in range(2, n+1): # 값 바뀔 문제
-        result = result * i
-    return result
+import random
 
-def factorial_recursion(n): # 실수할 여지 적음. 메모리 많이 사용. (스택)
-    """
-    재귀함수를 사용한 팩토리얼 함수
-    :param n: 정수, int
-    :return: function
-    """
-    if n == 1:
-        return n
-    else:
-        return n * factorial_recursion(n-1)
+numbers = []
+for i in range(5):
+    numbers.append(random.randint(1, 100))
+print(numbers)
 
-number = int(input("number : "))
-print(factorial_recursion(number))
 
-print(factorial_repetition(number))
+# 줄이기
 
-print(globals())
+numbers = [random.randint(1,100) for i in range(10)]
+print(numbers)
+
+try:
+    pick = int(input(f'Input index (0 ~ {len(numbers)-1}) : '))
+    print(numbers[pick])
+    print(5/0)
+
+# except: # 모든 걸 잡음. 에러 아닌 것도!
+
+except IndexError as err:  # as err: 시스템이 던져준 에러 # numbers[pick]에서 에러 발생
+    print(f"Wrong index number \n{err}")
+except ValueError as err:  # input은 받는데 int로 넘어갈 때 에러
+    print(f"Input Only Number \n{err}")
+except ZeroDivisionError as err:
+    print(f"The denominator cannot be 0. \n{err}")
+
+except Exception as err : # 가장 마지막에 와야함! !
+    print(f"Error occurs : {err}")
