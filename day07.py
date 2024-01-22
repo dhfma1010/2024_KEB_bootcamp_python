@@ -9,8 +9,9 @@ class SwimmingMixin:
         return f"{self.__name}이(가) 수영을 합니다."
 
 class Pokemon:
-    def __init__(self, name):
+    def __init__(self, name,hp):
         self.__name = name
+        self.hp = hp
 
     def attack(self):
         print("공격~")
@@ -34,8 +35,9 @@ class Pokemon:
     #     name=list1+list2
     #     return str(name)
 
-    def __add__(self,target):
-        return self.name + "와 " + target.__name + "입니다."
+    def __add__(self, target):
+        # return self.name + "와 " + target.__name + "입니다."
+        return f"두 포켓몬 체력 합은 {self.hp + target.hp}"    ##### 체력 늘어나고 줄어들게
 
 
 class Charizard(Pokemon, FlyingMixin):
@@ -44,9 +46,10 @@ class Charizard(Pokemon, FlyingMixin):
 class Gyarados(Pokemon, SwimmingMixin):
     pass
 
-g1 = Gyarados("갸라도스")
-c1 = Charizard("리자몽")
+g1 = Gyarados("갸라도스", 100)
+c1 = Charizard("리자몽", 120)
 print(g1)  # <__main__.Gyarados object at 0x000001A6A078E0C0>
 print(c1)
 
 print(g1+c1) # 정수나 문자 연산 + 아니므로 오류 / 새로 매직메서드 필요
+
