@@ -28,11 +28,14 @@ class Pokemon:
     def __str__(self):  # 매직 메서드
         return self.__name + "입니다."
 
-    def __add__(self, other):
-        list1=self.name[0:2]
-        list2=other.name[-1]
-        name=list1+list2
-        return str(name)
+    # def __add__(self, other):
+    #     list1=self.name[0:2]
+    #     list2=other.name[-1]
+    #     name=list1+list2
+    #     return str(name)
+
+    def __add__(self,target):
+        return self.name + "와 " + target.__name + "입니다."
 
 
 class Charizard(Pokemon, FlyingMixin):
