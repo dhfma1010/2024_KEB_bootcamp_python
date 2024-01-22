@@ -1,41 +1,21 @@
-# module
+class FlyingMixin:
+    def fly(self):
+        return f"{self.name}이(가) 하늘을 납니다."
+class SwimmingMixin:
+    def swim(self):
+        return f"{self.name}이(가) 수영"
 
+class Pokemon:
+    def __init__(self, name):
+        self.name = name
 
-import mymath as mm # 3) 줄여 쓰는 세번째 방법 (자주 씀)
+class Charizard(Pokemon, FlyingMixin):
+    pass
 
-# print(globals())
+class Gyarados(Pokemon, SwimmingMixin):
+    pass
 
-if __name__ == "__main__": # 실행시키는 파일 main인지 아닌지 확인
-
-    while True:
-        menu = input("1) Fahrenheit -> Celsius   2) Celsius -> Fahrenheit   3) Prime1   4) Prime2   5) Quit program : ")
-
-        if menu == '1':
-            fahrenheit = float(input('Input Fahrenheit : '))
-            print(f'Fahrenheit : {fahrenheit}F, Celsius : {mm.fahrenheit_to_celsius(fahrenheit):.4f}C')
-        elif menu == '2':
-            celsius = float(input('Input Celsius : '))
-            print(f'Celsius : {celsius}C, Fahrenheit : {mm.celsius_to_fahrenheit(celsius):.4f}F')
-        elif menu == '3':
-            number = int(input("Input number : "))
-            if mm.isprime(number):
-                print(f'{number} is prime number')
-            else:
-                print(f'{number} is NOT prime number!')
-        elif menu == '4':
-            numbers = input("Input first second number : ").split()
-            n1 = int(numbers[0])
-            n2 = int(numbers[1])
-
-            if n1 > n2:
-                n1, n2 = n2, n1
-
-            for number in range(n1, n2 + 1):
-                if isprime(number):
-                    print(number, end=' ')
-            print()
-        elif menu == '5':
-            print('Terminate Program.')
-            break
-        else:
-            print('Invalid Menu!')
+g1 = Gyarados("갸라도스")
+c1 = Charizard("리자몽")
+print(c1.fly())
+print(g1.swim())
