@@ -1,17 +1,34 @@
-# 매직 메서드
 
-class FlyingMixin:
+
+
+class FlyingBehavior:
     def fly(self):
-        return f"{self.__name}이(가) 하늘을 훨훨 날아갑니다~"
+        return f"하늘을 훨훨 날아갑니다~"
 
-class SwimmingMixin:
+class NoFly(FlyingBehavior):
+    def fly(self):
+        return f"하늘 날 수x"
+
+class FlyWithWings(FlyingBehavior):
+
+    def fly(self):
+        return f"날개로 하늘 날아"
+
+
+class JetPack(FlyingBehavior):
+    def fly(self):
+        return f"로켓으로 하늘 날아감"
+
+
+class SwimmingBehavior:
     def swim(self):
         return f"{self.__name}이(가) 수영을 합니다."
 
 class Pokemon:
-    def __init__(self, name,hp):
+    def __init__(self, name, hp, fly):
         self.__name = name
         self.hp = hp
+        self.fly_beh = fly  ## aggregation (has-a)
 
     def attack(self):
         print("공격~")
@@ -40,14 +57,26 @@ class Pokemon:
         return f"두 포켓몬 체력 합은 {self.hp + target.hp}"    ##### 체력 늘어나고 줄어들게
 
 
-class Charizard(Pokemon, FlyingMixin):
+class Charizard(Pokemon):
     pass
 
-class Gyarados(Pokemon, SwimmingMixin):
+class Gyarados(Pokemon):
     pass
 
-g1 = Gyarados("갸라도스", 100)
-c1 = Charizard("리자몽", 120)
+class Pikachu(Pokemon):
+    pass
+
+
+
+nofly = NoFly()
+g1 = Pikachu("피카츄", 35, nofly)
+
+wings = FlyWithWings() # 다른 클래스 객체 만들어서 리자몽에게 전달
+c1 = Charizard("리자몽", 120, wings) # aggregation
+
+print(c1.fly_beh.fly()) # fly객체의 fly사용
+print(g1.fly_beh.fly())
+
 print(g1)  # <__main__.Gyarados object at 0x000001A6A078E0C0>
 print(c1)
 
