@@ -24,12 +24,15 @@ class SwimmingBehavior:
     def swim(self):
         return f"{self.__name}이(가) 수영을 합니다."
 class Pikachu:
-    def __init__(self, name, hp, fly):
+    def __init__(self, name, hp):
         self.name = name
         self.hp = hp
+        self.fly_beh = NoFly() # composition
+
+    def set_fly_beh(self, fly):
         self.fly_beh = fly
 
 
-nofly = NoFly()
-p1 = Pikachu("피카츄", 35, nofly)
-print(p1.fly_beh.fly()) # aggregation
+p1 = Pikachu("피카츄", 35)
+print(p1.fly_beh.fly())
+print(p1.set_fly_beh.fly(JetPack()))
