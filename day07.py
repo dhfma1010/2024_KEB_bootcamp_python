@@ -30,6 +30,11 @@ class Pokemon:
         self.hp = hp
         self.fly_beh = fly  ## aggregation (has-a)
 
+    def set_fly_beh(self,fly):    ## setter
+        self.fly_beh = fly
+
+
+
     def attack(self):
         print("공격~")
 
@@ -64,21 +69,25 @@ class Gyarados(Pokemon):
     pass
 
 class Pikachu(Pokemon):
-    pass
+
 
 
 
 nofly = NoFly()
-g1 = Pikachu("피카츄", 35, nofly)
+p1 = Pikachu("피카츄", 35, nofly)
 
 wings = FlyWithWings() # 다른 클래스 객체 만들어서 리자몽에게 전달
 c1 = Charizard("리자몽", 120, wings) # aggregation
 
 print(c1.fly_beh.fly()) # fly객체의 fly사용
-print(g1.fly_beh.fly())
+print(p1.fly_beh.fly())
 
-print(g1)  # <__main__.Gyarados object at 0x000001A6A078E0C0>
+print(p1)  # <__main__.Gyarados object at 0x000001A6A078E0C0>
 print(c1)
 
-print(g1+c1) # 정수나 문자 연산 + 아니므로 오류 / 새로 매직메서드 필요
+# print(p1+c1) # 정수나 문자 연산 + 아니므로 오류 / 새로 매직메서드 필요
+
+p1.set_fly_beh(JetPack()) # 아이템 장착으로 변화
+print(p1.fly_beh.fly())
+
 
